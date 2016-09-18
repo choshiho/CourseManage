@@ -1,0 +1,36 @@
+     .quene {
+				width: 250px;
+				padding: 10px;
+				background-color: #F4F5F9;
+				text-align: left;
+				margin-left: 50px;
+				margin-top: 20px;
+			}
+			
+			.quene-quit {
+				margin-left: 20px;
+				cursor: pointer;
+			}
+			.quene .process,.quene02 .process{
+				width: 100%;
+				margin: 10px auto;
+				height: 15px;
+			}
+			.quene .process-bar,.quene02 .process-bar {
+			display: inline-block;
+		     width:100%;
+		     height:15px;
+		     border-radius:15px;
+			 background-color: #79a43b;
+			}
+			.quene-msg.error {
+				color: red;
+			}
+		 .quene02 {
+				width: 250px;
+				padding: 10px;
+				background-color: #F4F5F9;
+				text-align: left;
+				margin-left: 118px;
+				margin-top: 20px;
+			}

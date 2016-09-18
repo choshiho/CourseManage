@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.beijing.course.dao.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.beijing.course.pojo.User" >
+    <result column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="role" property="role" jdbcType="INTEGER" />
+  </resultMap>
+  
+<!--   <select id="getCourseFileById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+	select * from t_file 
+		where id = #{id,jdbcType=INTEGER}
+  </select> -->
+  
+  <select id="getAllUser" resultMap="BaseResultMap">
+	select * from t_user 
+  </select>
+  
+  <update id="modifyPassword">
+    update t_user
+    set password=#{password,jdbcType=VARCHAR}
+    where id=#{id,jdbcType=INTEGER} 
+  </update>
+  
+  <!-- <insert id="insert" parameterType="test.domain.Cart" >
+    insert into collection_cart_list_v (user_id, user_name, cg_id, 
+      collect_count, group_name, display_order, 
+      adcollect_id, crtime, push_id, 
+      ad_id, push_title)
+    values (#{userId,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{cgId,jdbcType=INTEGER}, 
+      #{collectCount,jdbcType=INTEGER}, #{groupName,jdbcType=VARCHAR}, #{displayOrder,jdbcType=INTEGER}, 
+      #{adcollectId,jdbcType=INTEGER}, #{crtime,jdbcType=TIMESTAMP}, #{pushId,jdbcType=INTEGER}, 
+      #{adId,jdbcType=BIGINT}, #{pushTitle,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="test.domain.Cart" >
+    insert into collection_cart_list_v
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="userName != null" >
+        user_name,
+      </if>
+      <if test="cgId != null" >
+        cg_id,
+      </if>
+      <if test="collectCount != null" >
+        collect_count,
+      </if>
+      <if test="groupName != null" >
+        group_name,
+      </if>
+      <if test="displayOrder != null" >
+        display_order,
+      </if>
+      <if test="adcollectId != null" >
+        adcollect_id,
+      </if>
+      <if test="crtime != null" >
+        crtime,
+      </if>
+      <if test="pushId != null" >
+        push_id,
+      </if>
+      <if test="adId != null" >
+        ad_id,
+      </if>
+      <if test="pushTitle != null" >
+        push_title,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="userId != null" >
+        #{userId,jdbcType=INTEGER},
+      </if>
+      <if test="userName != null" >
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="cgId != null" >
+        #{cgId,jdbcType=INTEGER},
+      </if>
+      <if test="collectCount != null" >
+        #{collectCount,jdbcType=INTEGER},
+      </if>
+      <if test="groupName != null" >
+        #{groupName,jdbcType=VARCHAR},
+      </if>
+      <if test="displayOrder != null" >
+        #{displayOrder,jdbcType=INTEGER},
+      </if>
+      <if test="adcollectId != null" >
+        #{adcollectId,jdbcType=INTEGER},
+      </if>
+      <if test="crtime != null" >
+        #{crtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="pushId != null" >
+        #{pushId,jdbcType=INTEGER},
+      </if>
+      <if test="adId != null" >
+        #{adId,jdbcType=BIGINT},
+      </if>
+      <if test="pushTitle != null" >
+        #{pushTitle,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert> -->
+</mapper>
